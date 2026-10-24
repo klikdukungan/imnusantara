@@ -1,1 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Dukung Imnusantara</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f5f5;
+            color: #302629;
+            line-height: 1.7;
+        } 
+
+        .container {
+            width: 90%;
+            max-width: 720px;
+            margin: 35px auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #c8102e, #ed2939);
+            color: white;
+            padding: 35px 22px;
+            text-align: center;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .header .label {
+            display: inline-block;
+            padding: 5px 14px;
+            background: rgba(255,255,255,.22);
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: .95;
+        }
+
+        .content {
+            background: white;
+            padding: 28px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.06);
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .intro h2 {
+            font-size: 22px;
+            color: #c8102e;
+            margin-bottom: 8px;
+        }
+
+        .intro p {
+            font-size: 14px;
+            color: #75666a;
+        }
+
+        .qr-card {
+            background: #fff8f8;
+            border: 1px solid #f0dadd;
+            border-radius: 15px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .qr-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .qr-card .hint {
+            font-size: 13px;
+            color: #83777a;
+            margin-bottom: 15px;
+        }
+
+        .qr-image {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: white;
+            border: 1px solid #eadfe1;
+            border-radius: 12px;
+            padding: 10px;
+            display: block;
+            margin: 0 auto 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 17px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .btn-green {
+            color: white;
+            background: #c8102e;
+        }
+
+        .btn-green:hover {
+            background: #a50d25;
+        }
+
+        .btn-light {
+            color: #c8102e;
+            background: #fff0f1;
+        }
+
+        .btn-light:hover {
+            background: #ffe0e4;
+        }
+
+        .account {
+            text-align: left;
+            background: white;
+            border: 1px solid #f0dadd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .account h4 {
+            margin-bottom: 10px;
+            color: #c8102e;
+        }
+
+        .account-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 7px 0;
+            font-size: 13px;
+        }
+
+        .account-row span:first-child {
+            color: #83777a;
+        }
+
+        .account-row strong {
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .guide {
+            margin-top: 32px;
+        }
+
+        .guide h2 {
+            font-size: 21px;
+            margin-bottom: 7px;
+            color: #c8102e;
+        }
+
+        .guide > p {
+            font-size: 14px;
+            color: #75666a;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .number {
+            flex-shrink: 0;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #ffe3e6;
+            color: #c8102e;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            font-size: 13px;
+            color: #75666a;
+        }
+
+        .note {
+            margin-top: 22px;
+            background: #fff1f2;
+            border-left: 4px solid #c8102e;
+            border-radius: 7px;
+            padding: 14px;
+            font-size: 13px;
+            color: #842033;
+        }
+
+        .closing {
+            margin-top: 28px;
+            text-align: center;
+            padding: 20px 10px;
+            background: #fff1f2;
+            border-radius: 12px;
+        }
+
+        .closing h3 {
+            color: #c8102e;
+            margin-bottom: 5px;
+        }
+
+        .closing p {
+            font-size: 13px;
+            color: #75666a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px 10px;
+            font-size: 12px;
+            color: #8b7e81;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 94%;
+                margin: 15px auto;
+            }
+
+            .header {
+                padding: 27px 16px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 18px 14px;
+            }
+
+            .qr-card {
+                padding: 16px 10px;
+            }
+
+            .account-row {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <span class="label">imnusantara</span>
+        <h1>Ayo Dukung Imnusantara</h1>
+    
+    </header>
+
+    <main class="content">
+
+        <section class="intro">
+            <p>Dukungan Anda membantu media imnusantara tetap independen, menyuarakan fakta, dan menghadirkan informasi untuk publik.</p>
+        </section>
+
+        <section class="qr-card">
+            <h3>Scan QRIS untuk Mendukung Kami</h3>
+
+
+            <a href="images/qr.jpeg" target="_blank" rel="noopener">
+                <img src="images/qr.jpeg" alt="Barcode QRIS donasi" class="qr-image">
+            </a>
+
+            <a class="btn btn-green" href="images/qr.jpeg" download>
+                Unduh Barcode QRIS
+            </a>
+
+            <!--div class="account">
+                <h4>Transfer Melalui Rekening</h4>
+
+                <div class="account-row">
+                    <span>Program</span>
+                    <strong>Dukungan Homeless Media</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>Bank</span>
+                    <strong>Bank BCA</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>No. Rekening</span>
+                    <strong id="rekening">1234567890</strong>
+                </div>
+
+                <div class="account-row">
+                    <span>Atas Nama</span>
+                    <strong>Homeless Media</strong>
+                </div>
+
+                <button class="btn btn-light" style="margin-top:12px" onclick="salinRekening()">
+                    Salin Nomor Rekening
+                </button>
+        </div-->
+
+
+          
+        </section>
+
+        <section class="guide">
+            <h2>📱 Cara Scan QRIS di HP</h2>
+            <p>
+                Ikuti langkah-langkah berikut untuk melakukan donasi
+                langsung melalui aplikasi mobile banking.
+            </p>
+
+            <div class="step">
+                <div class="number">1</div>
+                <div>
+                    <h3>Unduh atau Screenshot Barcode</h3>
+                    <p>
+                        Simpan gambar barcode QRIS ke galeri HP Anda
+                        agar mudah ditemukan saat melakukan pembayaran.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <div>
+                    <h3>Buka Aplikasi Mobile Banking</h3>
+                    <p>
+                        Buka aplikasi mobile banking atau dompet digital
+                        yang mendukung pembayaran QRIS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <div>
+                    <h3>Pilih Menu QRIS atau Scan QR</h3>
+                    <p>
+                        Masuk ke menu pembayaran QRIS atau fitur scan
+                        yang tersedia di aplikasi Anda.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="number">4</div>
+                <div>
+                    <h3>Pilih Gambar dari Galeri</h3>
+                    <p>
+                        Jika tersedia, tekan ikon galeri atau unggah gambar,
+                        lalu pilih screenshot barcode QRIS yang telah disimpan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Catatan:</strong> Nama menu dapat berbeda di setiap
+                aplikasi. Jika fitur memilih gambar dari galeri tidak tersedia,
+                gunakan perangkat lain untuk menampilkan barcode, lalu scan
+                menggunakan HP Anda.
+            </div>
+        </section>
+
+        <section class="closing">
+            <h3>Terima Kasih atas Dukungan Partisipasi Anda 🤝</h3>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Dukungan Homeless Media.
+        Terima kasih telah mendukung media independen.
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function salinRekening() {
+        const rekening = document.getElementById('rekening').innerText.trim();
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(rekening)
+                .then(() => alert('Nomor rekening berhasil disalin!'))
+                .catch(() => alert('Silakan salin nomor rekening secara manual.'));
+        } else {
+            alert('Silakan salin nomor rekening secara manual: ' + rekening);
+        }
+    }
+</script>
+
+</body>
+</html>
+
 
